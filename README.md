@@ -6,6 +6,21 @@ Clone this repo and start from here or follow the steps below to get up and runn
 
 ![Screenshot](src/screen.png)
 
+## Prerequisites
+
+* Have npm installed (node)
+* Install [angular-cli](https://angular.io/guide/quickstart) : `npm install -g @angular/cli`
+
+* Have AMQ 7 installed and running
+	* [Download AMQ version 7.0.0+ here](https://developers.redhat.com/products/amq/download/)
+	* unzip package `unzip jboss-amq-7.0.0.redhat-1-bin.zip`
+	* create a test instance
+
+			cd jboss-amq-7.0.0.redhat-1/bin
+			./artemis create  --user admin --password admin --allow-anonymous Y ./../instances/eventbrk
+			cd ./../instances/eventbrk/bin
+			./artemis run
+
 ## Steps taken to generate this template
 
 ```
