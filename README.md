@@ -1,10 +1,12 @@
-# AngularAmqBootstrapTemplate
+# Angular with AMQ-7 Bootstrap Plotly Template
 
 An Angular 5 project preconfigured with Bootstrap, rhea for messaging with AMQ 7 Broker, plotly.js for charts and plots.
 
-Clone this repo to start a project
+Clone this repo and start from here or follow the steps below to get up and running.
 
 ![Screenshot](src/screen.png)
+
+## Steps taken to generate this template
 
 ```
 ng new angular-amq-bootstrap-template
@@ -59,3 +61,5 @@ import { FormsModule } from '@angular/forms';
     BrowserModule, FormsModule, NgbModule.forRoot()
   ],
 ```
+
+Create a dummy component and start playing with messages and plots.
