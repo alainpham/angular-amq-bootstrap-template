@@ -1,27 +1,61 @@
 # AngularAmqBootstrapTemplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+An Angular 5 project preconfigured with Bootstrap, rhea for messaging with AMQ 7 Broker, plotly.js for charts and plots.
 
-## Development server
+Clone this repo to start a project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Screenshot](src/screen.png)
 
-## Code scaffolding
+```
+ng new angular-amq-bootstrap-template
+npm install rhea --save
+npm install @ng-bootstrap/ng-bootstrap --save 
+npm install bootstrap --save
+npm install plotly.js --save
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Edit src/tsconfig.app.json. Add node to types.
 
-## Build
+```
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": ["node"]
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+edit .angular-cli.json
 
-## Running unit tests
+```
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"
+      ],
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+      ...
 
-## Running end-to-end tests
+      "scripts": ["../node_modules/plotly.js/dist/plotly.min.js"],
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+edit src/typings.d.ts
 
-## Further help
+```
+declare var Plotly: any;
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+edit src/app/app.module.ts
+```
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+...
+  imports: [
+    BrowserModule, FormsModule, NgbModule.forRoot()
+  ],
+```
